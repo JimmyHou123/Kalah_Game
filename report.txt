@@ -1,0 +1,875 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid501\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid6}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b\fs26 \cf0 First Part:
+\f1\b0 \
+\
+Function: 
+\f0\b Board::Board(int nHoles, int nInitialBeansPerHole)
+\f1\b0 \
+Description: This is the constructor for the 
+\f0\b Board
+\f1\b0  class. It initializes a game board with a specified number of holes and initial number of beans per hole. It also initializes the vectors 
+\f0\b N_holes
+\f1\b0  and 
+\f0\b S_holes
+\f1\b0  to represent the beans in each hole for the north and south sides of the board.\
+Data Structures:\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls1\ilvl0
+\f2\fs18 \cf0 {\listtext	\uc0\u8226 	}
+\f0\b\fs26 N_holes
+\f1\b0 : A vector representing the number of beans in each hole for the north side of the board.\
+\ls1\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f0\b\fs26 S_holes
+\f1\b0 : A vector representing the number of beans in each hole for the south side of the board.\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 Private Member Functions/Helper Non-Member Functions:\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls2\ilvl0
+\f2\fs18 \cf0 {\listtext	\uc0\u8226 	}
+\f1\fs26 No private member functions or helper non-member functions are defined in this code snippet.\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+Function: 
+\f0\b Board::~Board()
+\f1\b0 \
+Description: This is the destructor for the 
+\f0\b Board
+\f1\b0  class. It does not perform any specific actions since there are no dynamically allocated resources to clean up.\
+\
+Function: 
+\f0\b int Board::holes() const
+\f1\b0 \
+Description: This function returns the number of holes on the board.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b int Board::beans(Side s, int hole) const
+\f1\b0 \
+Description: This function returns the number of beans in a specified hole on a given side of the board.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b int Board::beansInPlay(Side s) const
+\f1\b0 \
+Description: This function returns the total number of beans in play on a given side of the board.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b int Board::totalBeans() const
+\f1\b0 \
+Description: This function returns the total number of beans in play on the entire board.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b bool Board::sow(Side s, int hole, Side& endSide, int& endHole)
+\f1\b0 \
+Description: This function simulates the sow action in the game, where beans are distributed from a specified hole to subsequent holes in a counter-clockwise direction. It updates the board state and returns 
+\f0\b true
+\f1\b0  if the sow action was successful, or 
+\f0\b false
+\f1\b0  if the action was invalid.\
+Data Structures:\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls3\ilvl0
+\f2\fs18 \cf0 {\listtext	\uc0\u8226 	}
+\f0\b\fs26 N_holes
+\f1\b0 : A vector representing the number of beans in each hole for the north side of the board.\
+\ls3\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f0\b\fs26 S_holes
+\f1\b0 : A vector representing the number of beans in each hole for the south side of the board.\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b bool Board::moveToPot(Side s, int hole, Side potOwner)
+\f1\b0 \
+Description: This function moves the beans from a specified hole to the pot (a special hole) of the specified owner. It updates the board state and returns 
+\f0\b true
+\f1\b0  if the move was successful, or 
+\f0\b false
+\f1\b0  if the move was invalid.\
+Data Structures:\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls4\ilvl0
+\f2\fs18 \cf0 {\listtext	\uc0\u8226 	}
+\f0\b\fs26 N_holes
+\f1\b0 : A vector representing the number of beans in each hole for the north side of the board.\
+\ls4\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f0\b\fs26 S_holes
+\f1\b0 : A vector representing the number of beans in each hole for the south side of the board.\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b bool Board::setBeans(Side s, int hole, int beans)
+\f1\b0 \
+Description: This function sets the number of beans in a specified hole on a given side of the board. It returns 
+\f0\b true
+\f1\b0  if the operation was successful, or 
+\f0\b false
+\f1\b0  if the hole or bean count is invalid.\
+Data Structures:\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls5\ilvl0
+\f2\fs18 \cf0 {\listtext	\uc0\u8226 	}
+\f0\b\fs26 N_holes
+\f1\b0 : A vector representing the number of beans in each hole for the north side of the board.\
+\ls5\ilvl0
+\f2\fs18 {\listtext	\uc0\u8226 	}
+\f0\b\fs26 S_holes
+\f1\b0 : A vector representing the number of beans in each hole for the south side of the board.\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 Private Member Functions/Helper Non-Member Functions: None\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 Function: 
+\f0\b Game::Game(const Board& b, Player* south, Player* north)
+\f1\b0 \
+Description: This is the constructor for the 
+\f0\b Game
+\f1\b0  class. It initializes a game with a specified board and players for the south and north sides.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b void Game::display() const
+\f1\b0 \
+Description: This function displays the current state of the game board, including the names of the players, the number of beans in each hole, and the number of beans in each player's pot.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b void Game::status(bool& over, bool& hasWinner, Side& winner) const
+\f1\b0 \
+Description: This function determines the status of the game, whether it is over or ongoing, and if there is a winner. It updates the boolean variables 
+\f0\b over
+\f1\b0 , 
+\f0\b hasWinner
+\f1\b0 , and the side 
+\f0\b winner
+\f1\b0  accordingly.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b bool Game::move(Side s)
+\f1\b0 \
+Description: This function represents a move made by a player on a given side of the board. It interacts with the players to choose moves, updates the board state, and checks for capture moves. It returns 
+\f0\b true
+\f1\b0  if the move was successful, or 
+\f0\b false
+\f1\b0  if the move was invalid.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b void Game::play()
+\f1\b0 \
+Description: This function starts the game and allows players to take turns until the game is over. It interacts with the players, updates the board state, displays the current state, and determines the winner at the end of the game.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b int Game::beans(Side s, int hole) const
+\f1\b0 \
+Description: This function returns the number of beans in a specified hole on a given side of the board.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b Player::Player(std::string name)
+\f1\b0 \
+Description: This is the constructor for the 
+\f0\b Player
+\f1\b0  class. It initializes a player with a specified name.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b std::string Player::name() const
+\f1\b0 \
+Description: This function returns the name of the player.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b bool Player::isInteractive() const
+\f1\b0 \
+Description: This function returns 
+\f0\b false
+\f1\b0  as it is a base class implementation. It indicates that the player is not interactive.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b Player::~Player()
+\f1\b0 \
+Description: This is the destructor for the 
+\f0\b Player
+\f1\b0  class.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b HumanPlayer::HumanPlayer(std::string name)
+\f1\b0 \
+Description: This is the constructor for the 
+\f0\b HumanPlayer
+\f1\b0  class. It initializes a human player with a specified name.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b bool HumanPlayer::isInteractive() const
+\f1\b0 \
+Description: This function returns 
+\f0\b true
+\f1\b0  as it is an implementation for the 
+\f0\b HumanPlayer
+\f1\b0  class. It indicates that the human player is interactive.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b int HumanPlayer::chooseMove(const Board& b, Side s) const
+\f1\b0 \
+Description: This function prompts the human player to choose a valid move by entering the hole number. It checks if the chosen move is valid and returns the chosen hole number.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b HumanPlayer::~HumanPlayer()
+\f1\b0 \
+Description: This is the destructor for the 
+\f0\b HumanPlayer
+\f1\b0  class.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b BadPlayer::BadPlayer(std::string name)
+\f1\b0 \
+Description: This is the constructor for the 
+\f0\b BadPlayer
+\f1\b0  class. It initializes a bad player with a specified name.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b bool BadPlayer::isInteractive() const
+\f1\b0 \
+Description: This function returns 
+\f0\b false
+\f1\b0  as it is an implementation for the 
+\f0\b BadPlayer
+\f1\b0  class. It indicates that the bad player is not interactive.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b int BadPlayer::chooseMove(const Board& b, Side s) const
+\f1\b0 \
+Description: This function chooses a move for the bad player by selecting the first non-empty hole on their side of the board.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b BadPlayer::~BadPlayer()
+\f1\b0 \
+Description: This is the destructor for the 
+\f0\b BadPlayer
+\f1\b0  class.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b SmartPlayer::SmartPlayer(std::string name)
+\f1\b0 \
+Description: This is the constructor for the 
+\f0\b SmartPlayer
+\f1\b0  class. It initializes a smart player with a specified name.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b bool SmartPlayer::isInteractive() const
+\f1\b0 \
+Description: This function returns 
+\f0\b false
+\f1\b0  as it is an implementation for the 
+\f0\b SmartPlayer
+\f1\b0  class. It indicates that the smart player is not interactive.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b int SmartPlayer::chooseMove(const Board& b, Side s) const
+\f1\b0 \
+Description: This function chooses a move for the smart player by evaluating different possible moves using the 
+\f0\b explore
+\f1\b0  function and selecting the best move based on the resulting board states.\
+Data Structures: None\
+\
+Function: 
+\f0\b SmartPlayer::~SmartPlayer()
+\f1\b0 \
+Description: This is the destructor for the 
+\f0\b SmartPlayer
+\f1\b0  class.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b int SmartPlayer::result(const Board& b, Side smart_s) const
+\f1\b0 \
+Description: This function calculates and returns a heuristic value for a given board state and a specified side (smart player side). It considers the difference in the number of beans in the smart player's pot and the opponent's pot.\
+Data Structures: None\
+Private Member Functions/Helper Non-Member Functions: None\
+\
+Function: 
+\f0\b void SmartPlayer::explore(const Board& b, const Side& smart_s, Side s, int& best_value, int& best_hole, int round, double timeLimit, Timer& timer) const
+\f1\b0 \
+Description: This function recursively explores different moves and board states to find the best move for the smart player. It uses the 
+\f0\b result
+\f1\b0  function to evaluate the board states and selects the move with the highest or lowest heuristic value based on the current side and smart player side.\
+Data Structures: None\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 Private Member Functions/Helper Non-Member Functions: 
+\f0\b int SmartPlayer::result(const Board& b, Side smart_s) const
+\f1\b0 , 
+\f0\b void SmartPlayer::explore(const Board& b, const Side& smart_s, Side s, int& best_value, int& best_hole, int round, double timeLimit, Timer& timer
+\f1\b0 \
+
+\f0\b ) const\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 Second Part:\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1\b0 \cf0 The 
+\f0\b SmartPlayer::chooseMove
+\f1\b0  function is responsible for selecting the best move for the smart player by evaluating different possible moves and their resulting board positions. The design of this function involves calling the 
+\f0\b explore
+\f1\b0  function to recursively explore the game tree and calculate heuristic values for each possible move.\
+The 
+\f0\b chooseMove
+\f1\b0  function begins by checking if there are any beans in play for the smart player's side. If there are no beans in play, it returns an invalid move (-1). Otherwise, it creates a copy of the current board (
+\f0\b temp_board
+\f1\b0 ) and initializes variables 
+\f0\b best_value
+\f1\b0  and 
+\f0\b best_hole
+\f1\b0  to store the best move's heuristic value and corresponding hole.\
+The 
+\f0\b explore
+\f1\b0  function is then called to evaluate different moves and their resulting board states. The 
+\f0\b explore
+\f1\b0  function takes the 
+\f0\b temp_board
+\f1\b0  along with the smart player's side (
+\f0\b smart_s
+\f1\b0 ), the current side (
+\f0\b s
+\f1\b0 ), the current best value (
+\f0\b best_value
+\f1\b0 ), current best hole (
+\f0\b best_hole
+\f1\b0 ), and the round number as input.\
+The 
+\f0\b explore
+\f1\b0  function recursively explores different moves and board states up to a certain depth (in this case, a maximum of 5 rounds). It uses a depth-first search approach to traverse the game tree. For each valid move, it simulates the move on the 
+\f0\b temp_board
+\f1\b0 , sows the seeds, and checks the resulting board state.\
+Within the 
+\f0\b explore
+\f1\b0  function, the following steps are performed:\
+\pard\pardeftab560\pardirnatural\partightenfactor0
+\ls6\ilvl0\cf0 {\listtext	0.	}Check if the current side (
+\f0\b s
+\f1\b0 ) has any beans in play. If not, set 
+\f0\b best_hole
+\f1\b0  to -1 and calculate the heuristic value (
+\f0\b best_value
+\f1\b0 ) for the resulting board state using the 
+\f0\b result
+\f1\b0  function. Then return from the current recursion level.\
+{\listtext	0.	}Check if the maximum depth (5 rounds) has been reached. If so, set 
+\f0\b best_hole
+\f1\b0  to -1 and calculate the heuristic value (
+\f0\b best_value
+\f1\b0 ) for the current board state using the 
+\f0\b result
+\f1\b0  function. Then return from the current recursion level.\
+{\listtext	0.	}Initialize 
+\f0\b best_value_temp
+\f1\b0  and 
+\f0\b best_hole_temp
+\f1\b0  variables to store the best value and hole for the current recursion level.\
+{\listtext	0.	}Determine the initial starting hole (
+\f0\b startHole
+\f1\b0 ) for the current side (
+\f0\b s
+\f1\b0 ). It starts from the first non-empty hole.\
+{\listtext	0.	}Perform a loop to simulate different moves by iterating over each possible hole. For each valid hole, sow the seeds and continue the game simulation.\
+{\listtext	0.	}Within the loop, a while loop is used to handle multiple sowing turns if the last sow ended on the current side (
+\f0\b s
+\f1\b0 ) and in a non-empty hole. The 
+\f0\b explore
+\f1\b0  function is recursively called for the next side and the next hole.\
+{\listtext	0.	}After the recursive call to 
+\f0\b explore
+\f1\b0 , obtain the resulting heuristic value (
+\f0\b best_value_temp
+\f1\b0 ) and the corresponding hole (
+\f0\b best_hole_temp
+\f1\b0 ) from the recursive call.\
+{\listtext	0.	}Update the 
+\f0\b best_value
+\f1\b0  and 
+\f0\b best_hole
+\f1\b0  based on the current side and smart player's side. If the current side is the smart player's side and the resulting heuristic value is greater than the current best value, update the 
+\f0\b best_value
+\f1\b0  and 
+\f0\b best_hole
+\f1\b0 . If the current side is the opponent of the smart player's side and the resulting heuristic value is smaller than the current best value, update the 
+\f0\b best_value
+\f1\b0  and 
+\f0\b best_hole
+\f1\b0 .\
+{\listtext	0.	}Repeat the loop for all valid holes.\
+{\listtext	0.	}Return from the current recursion level.\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 Once the 
+\f0\b explore
+\f1\b0  function returns, the 
+\f0\b chooseMove
+\f1\b0  function retrieves the 
+\f0\b best_hole
+\f1\b0  value and returns it as the selected move for the smart player.\
+As for the heuristics used to evaluate board positions, the implementation uses a simple heuristic based on the difference in the number of beans in the smart player's pot and the opponent's pot. If the smart player wins, a high value (999) is returned. If the opponent wins, a low value (-999) is returned. If it's a tie, the heuristic value is 0. These heuristic values are used to guide the smart player's decision-making process and prioritize moves that lead to favorable outcomes.\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Third Part:
+\f1\b0 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+int HumanPlayer::chooseMove(const Board& b, Side s) const\
+    if b.beansInPlay(s) is 0\
+        Return -1\
+    \
+    Initialize temp_hole to 0\
+    while temp_hole is less than 1 or temp_hole is greater than b.holes() or b.beans(s, temp_hole) is 0\
+        Output "Choose Valid Move: "\
+        Input temp_hole\
+    \
+    Return temp_hole\
+\
+int BadPlayer::chooseMove(const Board& b, Side s) const\
+    if b.beansInPlay(s) is 0\
+        Return -1\
+    \
+    Initialize temp_hole to 1\
+    for i from 1 to b.holes()\
+        if b.beans(s, i) is not 0\
+            Set temp_hole to i\
+            Break\
+    \
+    Return temp_hole\
+\
+int SmartPlayer::chooseMove(const Board& b, Side s) const\
+    if b.beansInPlay(s) is 0\
+        Return -1\
+    \
+    Create a copy of b called temp_board\
+    Initialize best_value and best_hole\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0     Initialize timer\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0     \
+    Call explore(temp_board, s, s, best_value, best_hole, 0, 4999, timer)\
+    \
+    Return best_hole\
+\
+int SmartPlayer::result(const Board& b, Side smart_s) const\
+    if b.beansInPlay(smart_s) is 0\
+        if b.beans(smart_s, 0) > b.totalBeans() - b.beans(smart_s, 0)\
+            Return 999\
+        else if b.beans(smart_s, 0) < b.totalBeans() - b.beans(smart_s, 0)\
+            Return -999\
+        else\
+            Return 0\
+    else\
+        Return b.beans(smart_s, 0) - b.beans(opponent(smart_s), 0)\
+\
+void SmartPlayer::explore(const Board& b, const Side& smart_s, Side s, int& best_value, int& best_hole, int round, double timeLimit, Timer& timer\
+) const\
+    Create a copy of b called temp\
+    \
+    if temp.beansInPlay(s) is 0\
+        Set best_hole to -1\
+        Set best_value to result(temp, smart_s)\
+        Return\
+    \
+    if round is 5\
+        Set best_hole to -1\
+        Set best_value to result(b, smart_s)\
+        Return\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0     else if timeLimit <= 0\
+	Set best_hole to -1\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0         Set best_value to result(b, smart_s)\
+        Return\
+    else\
+        Initialize best_value_temp and best_hole_temp\
+        \
+        if s is smart_s\
+            Set best_value to -9999\
+        else\
+            Set best_value to 9999\
+        \
+        for i from 1 to temp.holes()\
+            if temp.beans(s, i) is not 0\
+                Set endSide to undefined\
+                Set startHole to i\
+                Set endHole to undefined\
+                Set turn to 1\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 		timer.elapsed();\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+                do\
+                    if temp.beansInPlay(s) is 0\
+                        for i from 1 to temp.holes()\
+                            Move beans from opponent(s) at position i to opponent(s)'s pot\
+                        Break\
+                    \
+                    if turn is greater than 1\
+                        Increment round by 1\
+                        Call explore(temp, smart_s, s, startHole, endHole, round + 1, timeLimit, timer\
+)\
+                        Set startHole to startHole\
+                    \
+                    Sow beans from s's startHole, update endSide and endHole\
+                    Increment turn by 1\
+                    \
+                    if endSide is s and endHole is not 0 and temp.beans(opponent(s), endHole) is not 0 and temp.beans(s, endHole) is 1\
+                        Move beans from s's endHole to s's pot\
+                        Move beans from opponent(s)'s endHole to s's pot\
+                    \
+                while endSide is s and endHole is 0\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 		timeLimit -= timer.elapsed()\
+                if timeLimit <= 0\
+                    set timeLimit to 0\
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+\cf0 \
+                Call explore(temp, smart_s, opponent(s), best_value_temp, best_hole_temp, round + 1, timeLimit, timer\
+)\
+                \
+                if s is smart_s and best_value is less than or equal to best_value_temp\
+                    Set best_value to best_value_temp\
+                    Set best_hole to i\
+                else if s is opponent(smart_s) and best_value is greater than or equal to best_value_temp\
+                    Set best_value to best_value_temp\
+                    Set best_hole to i\
+        \
+        Return\
+\
+int Board::beansInPlay(Side s) const\
+    Initialize beansCount to 0\
+    \
+    for i from 1 to holes_m\
+        Increment beansCount by beans_m[s][i]\
+    \
+    Return beansCount\
+\
+int Board::totalBeans() const\
+    Initialize totalBeansCount to 0\
+    \
+    for s from NORTH to SOUTH\
+        for i from 0 to holes_m\
+            Increment totalBeansCount by beans_m[s][i]\
+    \
+    Return totalBeansCount\
+\
+bool Board::sow(Side s, int hole, Side& endSide, int& endHole)\
+    if hole is 0 or hole is greater than holes_m or beans_m[s][hole] is 0\
+        Return false\
+    \
+    Initialize beansToSow to beans_m[s][hole]\
+    Set beans_m[s][hole] to 0\
+    \
+    while beansToSow is not 0\
+        Move to the next hole\
+        if s is SOUTH\
+            Increment hole by 1\
+        else\
+            Decrement hole by 1\
+        \
+        if hole is 0\
+            if s is SOUTH\
+                Set s to NORTH\
+                Set hole to 1\
+            else\
+                Set s to SOUTH\
+                Set hole to holes_m\
+        \
+        Increment beans_m[s][hole] by 1\
+        Decrement beansToSow by 1\
+    \
+    Set endSide to s\
+    Set endHole to hole\
+    \
+    if endHole is 0\
+        if s is SOUTH\
+            Set endHole to 1\
+        else\
+            Set endHole to holes_m\
+    \
+    if s is SOUTH and endHole is 0\
+        Set endSide to NORTH\
+    \
+    if s is NORTH and endHole is holes_m\
+        Set endSide to SOUTH\
+    \
+    Return true\
+\
+bool Board::moveToPot(Side s, int hole, Side potOwner)\
+    if hole is 0 or hole is greater than holes_m or beans_m[s][hole] is 0\
+        Return false\
+    \
+    Increment beans_m[potOwner][0] by beans_m[s][hole]\
+    Set beans_m[s][hole] to 0\
+    \
+    Return true\
+\
+bool Board::setBeans(Side s, int hole, int beans)\
+    if hole is 0 or hole is greater than holes_m or beans is negative\
+        Return false\
+    \
+    Set beans_m[s][hole] to beans\
+    \
+    Return true\
+\
+void Game::display() const\
+    Output "  "\
+    for i from holes_m to 1\
+        Output i with a space\
+    Output endl\
+    \
+    Output "N"\
+    for i from holes_m to 1\
+        Output beans_m[NORTH][i] with a space\
+    Output beans_m[NORTH][0] and a newline\
+    \
+    Output "  "\
+    for i from 1 to holes_m\
+        Output beans_m[SOUTH][i] with a space\
+    Output beans_m[SOUTH][0] and a newline\
+    Output "S" and a newline\
+\
+void Game::status(bool& over, bool& hasWinner, Side& winner) const\
+    Set over to false\
+    Set hasWinner to false\
+    \
+    if board_m.beansInPlay(NORTH) is 0 or board_m.beansInPlay(SOUTH) is 0\
+        Set over to true\
+        \
+        if board_m.beansInPlay(NORTH) is 0 and board_m.beansInPlay(SOUTH) is 0\
+            Set hasWinner to false\
+        else\
+            Set hasWinner to true\
+            \
+            if board_m.beansInPlay(NORTH) is 0\
+                Set winner to SOUTH\
+            else\
+                Set winner to NORTH\
+\
+bool Game::move()\
+    bool over, hasWinner\
+    Side winner\
+    \
+    status(over, hasWinner, winner)\
+    \
+    if over\
+        return false\
+    \
+    int moveHole = currentPlayer_m->chooseMove(board_m, currentPlayer_m)\
+    \
+    while (!board_m.sow(currentPlayer_m, moveHole, endSide, endHole))\
+        moveHole = currentPlayer_m->chooseMove(board_m, currentPlayer_m)\
+    \
+    if endSide is currentPlayer_m and endHole is not 0 and board_m.beans(currentPlayer_m, endHole) is 1 and board_m.beans(opponent(currentPlayer_m), endHole) is not 0\
+        board_m.moveToPot(currentPlayer_m, endHole, currentPlayer_m)\
+        board_m.moveToPot(opponent(currentPlayer_m), endHole, currentPlayer_m)\
+    \
+    if endSide is not currentPlayer_m\
+        currentPlayer_m = opponent(currentPlayer_m)\
+    \
+    return true\
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\b \cf0 Four Part:\
+\
+
+\f1\b0 Smartplayer at the south side has more advantage over Smartplayer at the north side. The index 1 hole is chosen to evaluate in each chooseMove() function of Smartplayer. However, the relative position of Hole #1 to the pot is different to each side. Thus, the performance of Smartplayer at south and north is different.\
+\
+
+\f0\b Fifth Part:\
+\
+// Test Cases for Board Class
+\f1\b0 \
+\
+// Purpose: Test the initialization of the Board object with a specific number of holes and initial beans per hole\
+Board b1(6, 4);\
+\
+// Purpose: Test the getter function for the number of holes in the Board object\
+int numHoles = b1.holes();\
+\
+// Purpose: Test the getter function for the number of beans in a specific hole and side of the Board object\
+int beans = b1.beans(SOUTH, 3);\
+\
+// Purpose: Test the function that returns the number of beans in play for a specific side of the Board object\
+int beansInPlay = b1.beansInPlay(NORTH);\
+\
+// Purpose: Test the function that returns the total number of beans in the Board object\
+int totalBeans = b1.totalBeans();\
+\
+// Purpose: Test the function that allows sowing beans from a specific hole on a specific side of the Board object\
+Side endSide;\
+int endHole;\
+bool sowSuccess = b1.sow(NORTH, 2, endSide, endHole);\
+\
+// Purpose: Test the function that moves beans from a specific hole on a specific side to a pot on a different side of the Board object\
+bool moveToPotSuccess = b1.moveToPot(SOUTH, 4, NORTH);\
+\
+// Purpose: Test the function that sets the number of beans in a specific hole and side of the Board object\
+bool setBeansSuccess = b1.setBeans(NORTH, 1, 7);\
+\
+
+\f0\b // Test Cases for Game Class
+\f1\b0 \
+\
+// Purpose: Test the initialization of the Game object with a specific Board object and two Player objects\
+Player* southPlayer = new HumanPlayer("Alice");\
+Player* northPlayer = new HumanPlayer("Bob");\
+Board b2(4, 3);\
+Game g1(b2, southPlayer, northPlayer);\
+\
+// Purpose: Test the function that displays the current state of the game board\
+g1.display();\
+\
+// Purpose: Test the function that checks the status of the game (whether it is over, has a winner, and the winner side)\
+bool over, hasWinner;\
+Side winner;\
+g1.status(over, hasWinner, winner);\
+\
+// Purpose: Test the function that allows a player to make a move in the game\
+bool moveSuccess = g1.move();\
+\
+
+\f0\b // Test Cases for HumanPlayer Class
+\f1\b0 \
+\
+// Purpose: Test the initialization of the HumanPlayer object with a name\
+HumanPlayer p1("Alice");\
+\
+// Purpose: Test the function that determines if the player is interactive or not\
+bool isInteractive = p1.isInteractive();\
+\
+// Purpose: Test the chooseMove function when the player selects a valid move\
+Board b1;\
+b1.setBeans(SOUTH, 1, 3);\
+b1.setBeans(SOUTH, 2, 5);\
+b1.setBeans(SOUTH, 3, 2);\
+int move1 = p1.chooseMove(b1, SOUTH); // Expected: 1, as it is a valid move, enter 1\
+\
+// Purpose: Test the chooseMove function when the player selects an invalid move\
+Board b2;\
+b2.setBeans(SOUTH, 1, 0);\
+b2.setBeans(SOUTH, 2, 0);\
+b2.setBeans(SOUTH, 3, 0);\
+int move2 = p1.chooseMove(b2, SOUTH); // Expected: -1, as there are no valid moves\
+\
+
+\f0\b // Test Cases for BadPlayer Class
+\f1\b0 \
+\
+// Purpose: Test the initialization of the BadPlayer object with a name\
+BadPlayer p1("Bob");\
+\
+// Purpose: Test the function that determines if the player is interactive or not\
+bool isInteractive = p1.isInteractive();\
+\
+// Purpose: Test the chooseMove function when the player selects the first available move\
+Board b1;\
+b1.setBeans(SOUTH, 1, 3);\
+b1.setBeans(SOUTH, 2, 5);\
+b1.setBeans(SOUTH, 3, 2);\
+int move1 = p1.chooseMove(b1, SOUTH); // Expected: 1, as it selects the first available move\
+\
+// Purpose: Test the chooseMove function when the player has no valid moves\
+Board b2;\
+b2.setBeans(SOUTH, 1, 0);\
+b2.setBeans(SOUTH, 2, 0);\
+b2.setBeans(SOUTH, 3, 0);\
+int move2 = p1.chooseMove(b2, SOUTH); // Expected: -1, as there are no valid moves\
+\
+
+\f0\b // Test Cases for SmartPlayer Class
+\f1\b0 \
+\
+// Purpose: Test the initialization of the SmartPlayer object with a name\
+SmartPlayer p1("Charlie");\
+\
+// Purpose: Test the function that determines if the player is interactive or not\
+bool isInteractive = p1.isInteractive();\
+\
+// Purpose: Test the chooseMove function when the player selects the best move\
+Board b1;\
+b1.setBeans(SOUTH, 1, 3);\
+b1.setBeans(SOUTH, 2, 5);\
+b1.setBeans(SOUTH, 3, 2);\
+int move1 = p1.chooseMove(b1, SOUTH); // Expected: 2, as it selects the move that leads to the best outcome\
+\
+// Purpose: Test the chooseMove function when the player has no valid moves\
+Board b2;\
+b2.setBeans(SOUTH, 1, 0);\
+b2.setBeans(SOUTH, 2, 0);\
+b2.setBeans(SOUTH, 3, 0);\
+int move2 = p1.chooseMove(b2, SOUTH); // Expected: -1, as there are no valid moves\
+\
+}
