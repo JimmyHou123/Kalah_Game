@@ -76,9 +76,11 @@ Ensure all source files are in the same directory:
 #### **On macOS / Linux**
 ```bash
 g++ -std=c++17 Main.cpp Board.cpp Game.cpp Player.cpp -o mancala
+```
 #### **Windows**
 ```bash
 g++ -std=c++17 Main.cpp Board.cpp Game.cpp Player.cpp -o mancala.exe
+```
 
 ---
 
