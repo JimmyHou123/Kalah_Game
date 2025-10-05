@@ -1,4 +1,4 @@
-# 🎮 Mancala Game Simulation (Board, Game, and Player Classes)
+# 🎮 Mancala Game Simulation
 
 ## 📘 Overview
 This project implements a digital version of the **Mancala board game**, including the core game logic, AI decision-making strategies, and various player types. It demonstrates object-oriented programming principles in C++, recursion for AI exploration, and game-state management.
