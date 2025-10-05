@@ -64,17 +64,10 @@ The `Game` class orchestrates the play loop and manages turns, captures, and gam
 
 ## ▶️ How to Run
 
-### 🧩 1. Folder Structure
+## 🧩 1. Folder Structure
+
 Ensure all source files are in the same directory:
-Mancala/
-├── Board.cpp
-├── Board.h
-├── Game.cpp
-├── Game.h
-├── Player.cpp
-├── Player.h
-├── Side.h
-└── Main.cpp
+`Mancala/` → `Board.cpp`, `Board.h`, `Game.cpp`, `Game.h`, `Player.cpp`, `Player.h`, `Side.h`, `Main.cpp`
 
 ---
 
@@ -94,9 +87,11 @@ g++ -std=c++17 Main.cpp Board.cpp Game.cpp Player.cpp -o mancala.exe
 #### **On macOS / Linux**
 ```bash
 ./mancala
+```
 #### **Windows**
 ```bash
 mancala.exe
+```
 
 ---
 
@@ -112,6 +107,7 @@ int main() {
     Game g(b, &hp, &bp);
     g.play();
 }
+```
 
 ---
 
@@ -128,5 +124,4 @@ int main() {
     Game g(b, &south, &north);
     g.play();
 }
-
-
+```
